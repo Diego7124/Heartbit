@@ -1,15 +1,15 @@
-import { Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import SensorInfoScreen from './SensorInfoScreen';
+import SettingsScreen from './SettingsScreen';
 
+const Tab = createBottomTabNavigator();
 
- function Home () {
-  
-    return (
-      <View>
-        <Text>Didier gay</Text>
-      </View>
-    )
-  
+export default function Home() {
+  return (
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen name="Información de Sensores" component={SensorInfoScreen} />
+      <Tab.Screen name="Ajustes" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
 }
-
-export default Home
